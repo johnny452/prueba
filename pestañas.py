@@ -47,12 +47,12 @@ class Product:
         Label(frame, text = 'Pruebas Clinicas 1', bg = 'gray').grid(row = 1, column = 0, pady = 10, sticky = W + E)
         self.prueba = tk.StringVar(frame)
         self.prueba.set('---------------------------------------------------------------')
-        pruebas = self.menu_p
-        #pruebas = ('ANTIDOPING EN ORINA', 'BIOMETRIA HEMATICA COMPLETA BHC', 'COPROPARASITOSCOPICO EN SERIE DE 3', 'EXAMEN GENERAL DE ORINA', 'ESPERMATOBIOSCOPIA DIRECTA','EXUDADO FARINGEO CON ANTIBIOGRAMA', 'GLUCOSA DESTROXIS', 'GLUCOSA', 'GONADOTROFINA CORIONICA FRACCION BETA', 'GRUPO SANGUINEO Y FACTOR RH',
-        #           'HEMOGLOBINA GLUCOSILADA', 'PAPANICOLAU', 'PRUEBA INMUNOLOGICA DE EMBARAZO', 'GLUCOSA,COLESTEROL Y TRIGLICERIDOS', 'QUIMICA DE 4 ELEMENTOS', 'QUIMICA DE 5 ELEMENTOS', 'QUIMICA DE 6 ELEMENTOS', 'QUIMICA DE 12 ELEMENTOS', 'QUIMICA DE 18 ELEMENTOS', 'QUIMICA DE 25 ELEMENTOS','QUIMICA DE 32 ELEMENTOS',
-        #           'REACCIONES FEBRILES', 'TAMIZ METABOLICO NEONATAL CON AMINOACIDOS COMPLETO', 'TIEMPOS DE COAGULACION TTPA,TP, TS, TT', 'UROCULTIVO', 'VDRL', 'VIH PRUEBA DE TAMIZAJE', 'PERFIL HORMONAL FEMENINO BASICO', 'PERFIL HORMONAL GINECOLOGICO','PERFIL LIPIDOS', 'PERFIL PRENATAL', 'PERFIL PROSTATICO', 'PERFIL REUMATICO', 
-        #           'PERFIL TIROIDEO COMPLETO')                
-        self.menu_prueba = tk.OptionMenu(frame, self.prueba, *pruebas).grid(row = 1, column = 1, sticky = W + E, pady = 10)
+        #pruebas = self.menu_p
+        pruebas = ('ANTIDOPING EN ORINA', 'BIOMETRIA HEMATICA COMPLETA BHC', 'COPROPARASITOSCOPICO EN SERIE DE 3', 'EXAMEN GENERAL DE ORINA', 'ESPERMATOBIOSCOPIA DIRECTA','EXUDADO FARINGEO CON ANTIBIOGRAMA', 'GLUCOSA DESTROXIS', 'GLUCOSA', 'GONADOTROFINA CORIONICA FRACCION BETA', 'GRUPO SANGUINEO Y FACTOR RH',
+                   'HEMOGLOBINA GLUCOSILADA', 'PAPANICOLAU', 'PRUEBA INMUNOLOGICA DE EMBARAZO', 'GLUCOSA,COLESTEROL Y TRIGLICERIDOS', 'QUIMICA DE 4 ELEMENTOS', 'QUIMICA DE 5 ELEMENTOS', 'QUIMICA DE 6 ELEMENTOS', 'QUIMICA DE 12 ELEMENTOS', 'QUIMICA DE 18 ELEMENTOS', 'QUIMICA DE 25 ELEMENTOS','QUIMICA DE 32 ELEMENTOS',
+                   'REACCIONES FEBRILES', 'TAMIZ METABOLICO NEONATAL CON AMINOACIDOS COMPLETO', 'TIEMPOS DE COAGULACION TTPA,TP, TS, TT', 'UROCULTIVO', 'VDRL', 'VIH PRUEBA DE TAMIZAJE', 'PERFIL HORMONAL FEMENINO BASICO', 'PERFIL HORMONAL GINECOLOGICO','PERFIL LIPIDOS', 'PERFIL PRENATAL', 'PERFIL PROSTATICO', 'PERFIL REUMATICO', 
+                   'PERFIL TIROIDEO COMPLETO')                
+        self.menu_prueba= tk.OptionMenu(frame, self.prueba, *pruebas).grid(row = 1, column = 1, sticky = W + E, pady = 10)
         
 
         #contenedor desglose de costos 
@@ -71,7 +71,7 @@ class Product:
         self.subtotal = 0
         self.message9['text'] = '$ {}.0'.format(self.subtotal)
         
-        Button(self.frame5, text = 'Pagar', command = self.sumas).grid(row = 6, columnspan = 3, pady = 10, padx = 10, sticky = W + E) #command = self.ventana_paciente
+        Button(self.frame5, text = 'Pagar').grid(row = 6, columnspan = 3, pady = 10, padx = 10, sticky = W + E) #command = self.ventana_paciente command = self.sumas
         Button(self.frame5, text = 'Generar Recibo').grid(row = 7, columnspan = 3, pady = 10, padx = 10, sticky = W + E) #command = self.ventana_paciente
                 
 
@@ -99,16 +99,15 @@ class Product:
         if self.menu_p is None :
             self.menu_p = 'No hay estudios'
         else:
-            for row in self.menu_p:
-               print(row)        
-                        
-            for a in self.menu_p:
-                self.lista_p['estudio'] = a
-
-            self.lista_p = {"estudio":  self.lista_p}
-
-            print(type(self.lista_p))
-                     
+            
+            for menus_p in self.menu_p:
+                print(menus_p)
+                    
+                
+            #print(type(self.lista_p))
+            #print(self.lista_p)
+        
+            
                      
                            
    
